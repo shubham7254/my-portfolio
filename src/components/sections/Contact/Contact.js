@@ -9,6 +9,7 @@ const Contact = () => {
     message: ''
   });
   const [formErrors, setFormErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -31,20 +32,28 @@ const Contact = () => {
     return errors;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
     const errors = validateForm();
     setFormErrors(errors);
     
-    if (Object.keys(errors).length === 0) {
-      // Here you would typically send the form data to a server
-      alert('Thank you for your message! I\'ll get back to you soon.');
-      setFormData({ name: '', email: '', message: '' });
-    } else {
-      // Focus first error field
+    if (Object.keys(errors).length > 0) {
+      e.preventDefault(); // Only prevent submission if there are validation errors
       const firstErrorField = Object.keys(errors)[0];
       document.querySelector(`[name="${firstErrorField}"]`)?.focus();
+      return;
     }
+
+    // If no errors, let the form submit naturally to Netlify
+    // Don't call e.preventDefault() here
+    
+    setIsSubmitting(true);
+    
+    // Optional: Show success message after form submission
+    setTimeout(() => {
+      alert('Thank you for your message! I\'ll get back to you soon.');
+      setFormData({ name: '', email: '', message: '' });
+      setIsSubmitting(false);
+    }, 1000);
   };
 
   const contactItems = [
@@ -54,12 +63,6 @@ const Contact = () => {
       content: "jshubham@umich.edu",
       href: "mailto:jshubham@umich.edu"
     },
-    // {
-    //   icon: "fas fa-phone",
-    //   title: "Phone",
-    //   content: "+91 XXXXX XXXXX",
-    //   href: "tel:+91XXXXXXXXX"
-    // },
     {
       icon: "fas fa-map-marker-alt",
       title: "Location",
@@ -77,7 +80,6 @@ const Contact = () => {
     { href: "https://github.com/shubham7254", icon: "fab fa-github" },
     { href: "https://www.linkedin.com/in/jshubham17/", icon: "fab fa-linkedin" },
     { href: "mailto:jshubham@umich.edu", icon: "fas fa-envelope" },
-    // { href: "https://twitter.com/shubhamjagtap", icon: "fab fa-twitter" }
   ];
 
   return (
@@ -118,7 +120,18 @@ const Contact = () => {
           <div className="contact-form-section">
             <div className="contact-form-container">
               <h3 className="contact-form-title">Quick Message</h3>
-              <form className="contact-form" onSubmit={handleSubmit}>
+              <form 
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                className="contact-form" 
+                onSubmit={handleSubmit}
+              >
+                {/* Hidden fields required for Netlify Forms */}
+                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="bot-field" />
+                
                 <div className="form-group">
                   <label htmlFor="name" className="form-label">
                     Full Name <span className="required" aria-label="required">*</span>
@@ -185,9 +198,13 @@ const Contact = () => {
                   )}
                 </div>
                 
-                <button type="submit" className="btn btn-primary form-submit">
-                  <i className="fas fa-paper-plane"></i>
-                  Send Message
+                <button 
+                  type="submit" 
+                  className="btn btn-primary form-submit"
+                  disabled={isSubmitting}
+                >
+                  <i className={isSubmitting ? "fas fa-spinner fa-spin" : "fas fa-paper-plane"}></i>
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
