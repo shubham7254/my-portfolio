@@ -1,0 +1,97 @@
+.education-timeline {
+  position: relative;
+  padding-left: var(--space-8);
+}
+
+.education-timeline::before {
+  content: '';
+  position: absolute;
+  left: var(--space-4);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+}
+
+.education-item {
+  position: relative;
+  background: var(--bg-card);
+  padding: var(--space-8);
+  margin-bottom: var(--space-8);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  margin-left: var(--space-8);
+  transition: all var(--transition-normal);
+}
+
+.education-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: var(--shadow-xl);
+}
+
+.education-item::before {
+  content: '';
+  position: absolute;
+  left: -3rem;
+  top: var(--space-8);
+  width: 12px;
+  height: 12px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+.education-year {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.education-degree {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: var(--space-2) 0;
+  line-height: var(--line-height-tight);
+}
+
+.education-school {
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+  font-style: italic;
+}
+
+.education-details {
+  color: var(--text-accent);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+}
+
+.education-details p {
+  margin-bottom: var(--space-3);
+}
+
+.education-details p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .education-timeline {
+    padding-left: var(--space-4);
+  }
+  
+  .education-timeline::before {
+    left: var(--space-2);
+  }
+  
+  .education-item {
+    margin-left: var(--space-6);
+  }
+  
+  .education-item::before {
+    left: -2.5rem;
+  }
+}

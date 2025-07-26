@@ -1,0 +1,26 @@
+.error-boundary {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.error-content {
+  text-align: center;
+  padding: var(--space-8);
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.error-content h2 {
+  color: var(--color-error);
+  margin-bottom: var(--space-4);
+}
+
+.error-content p {
+  margin-bottom: var(--space-6);
+  color: var(--text-muted);
+}

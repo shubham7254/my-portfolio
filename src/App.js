@@ -1,24 +1,50 @@
-import logo from './logo.svg';
+import React, { Suspense } from 'react';
 import './App.css';
+import { AppProvider } from './context/AppContext';
+import ErrorBoundary from './components/common/ErrorBoundary/ErrorBoundary';
+import LoadingSpinner from './components/common/LoadingSpinner/LoadingSpinner';
+import Navbar from './components/layout/Navbar/Navbar';
+import Hero from './components/sections/Hero/Hero';
+import Footer from './components/layout/Footer/Footer';
+
+// Lazy load components for better performance
+const About = React.lazy(() => import('./components/sections/About/About'));
+const Skills = React.lazy(() => import('./components/sections/Skills/Skills'));
+const Projects = React.lazy(() => import('./components/sections/Projects/Projects'));
+const Education = React.lazy(() => import('./components/sections/Education/Education'));
+const Contact = React.lazy(() => import('./components/sections/Contact/Contact'));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppProvider>
+      <ErrorBoundary>
+        <div className="App">
+          {/* Animated Background */}
+          <div className="animated-bg">
+            <div className="floating-particles">
+              <div className="particle"></div>
+              <div className="particle"></div>
+              <div className="particle"></div>
+              <div className="particle"></div>
+              <div className="particle"></div>
+            </div>
+          </div>
+
+          <Navbar />
+          <main id="main-content">
+            <Hero />
+            <Suspense fallback={<LoadingSpinner />}>
+              <About />
+              <Skills />
+              <Projects />
+              <Education />
+              <Contact />
+            </Suspense>
+          </main>
+          <Footer />
+        </div>
+      </ErrorBoundary>
+    </AppProvider>
   );
 }
 
