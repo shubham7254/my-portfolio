@@ -6,6 +6,7 @@ import LoadingSpinner from './components/common/LoadingSpinner/LoadingSpinner';
 import Navbar from './components/layout/Navbar/Navbar';
 import Hero from './components/sections/Hero/Hero';
 import Footer from './components/layout/Footer/Footer';
+import ChatWidget from './components/common/ChatWidget/ChatWidget'; // Add this
 
 // Lazy load components for better performance
 const About = React.lazy(() => import('./components/sections/About/About'));
@@ -42,6 +43,7 @@ function App() {
             </Suspense>
           </main>
           <Footer />
+           <ChatWidget />
         </div>
       </ErrorBoundary>
     </AppProvider>
