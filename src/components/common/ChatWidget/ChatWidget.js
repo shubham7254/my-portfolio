@@ -49,7 +49,7 @@ const ChatWidget = () => {
 
     const userMessage = {
       type: 'user',
-      content: message,
+      content: message.trim(),
       timestamp: new Date()
     };
 
@@ -62,8 +62,8 @@ const ChatWidget = () => {
       
       const botMessage = {
         type: 'bot',
-        content: response.answer,
-        sources: response.sources,
+        content: response.answer || 'Sorry, I couldn\'t generate a response.', 
+        sources: Array.isArray(response.sources) ? response.sources : [], // Ensure array
         timestamp: new Date()
       };
 
@@ -137,7 +137,7 @@ const ChatWidget = () => {
                 className={`message ${message.type} ${message.isError ? 'error' : ''}`}
               >
                 <div className="message-content">
-                  {message.content}
+                  {typeof message.content === 'string' ? message.content : JSON.stringify(message.content)}
                   {message.sources && message.sources.length > 0 && (
                     <div className="message-sources">
                       <small>Sources: {message.sources.join(', ')}</small>

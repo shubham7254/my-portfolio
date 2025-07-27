@@ -267,7 +267,7 @@
   padding: 16px;
   border-top: 1px solid rgba(59, 130, 246, 0.2);
   display: flex;
-  gap: 8px;
+  gap: 12px;
   align-items: flex-end;
 }
 
@@ -275,34 +275,36 @@
   flex: 1;
   background: var(--bg-primary);
   border: 1px solid rgba(59, 130, 246, 0.3);
-  border-radius: 12px;
-  padding: 12px;
+  border-radius: 16px;
+  padding: 16px;
   color: var(--text-secondary);
   font-family: inherit;
-  font-size: 14px;
+  font-size: 15px;
   resize: none;
-  max-height: 100px;
-  min-height: 44px;
+  max-height: 120px;
+  min-height: 60px;
+  line-height: 1.4;
 }
 
 .chat-input-container textarea:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
 .send-button {
   background: var(--color-primary);
   color: white;
   border: none;
-  border-radius: 12px;
-  width: 44px;
-  height: 44px;
+  border-radius: 16px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
+  font-size: 16px;
 }
 
 .send-button:hover:not(:disabled) {
