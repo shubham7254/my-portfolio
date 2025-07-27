@@ -50,4 +50,5 @@ class RagApiService {
   }
 }
 
-export default new RagApiService();
+const ragApiService = new RagApiService();
+export default ragApiService;
