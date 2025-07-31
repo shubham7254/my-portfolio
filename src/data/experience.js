@@ -16,7 +16,7 @@ const experiences = [
     title: "Research Paper Co-Author",
     company: "IEEE Xplore",
     dates: "Published: Jun 2023",
-    location: "Remote",
+    location: "Savitribai Phule Pune University, India",
     description: [
       "Co-authored IEEE paper on legal document summarization using LegalBERT & DistilBART.",
       "Handled model development, dataset curation, and evaluation.",
