@@ -1,38 +1,47 @@
 import React from "react";
-import experiences from "../../data/experiences";
 import FadeInSection from '../../common/FadeInSection/FadeInSection';
+import experiences from "../../../data/experience";
+import "./Experience.css";
 
-export default function Experience() {
+const Experience = () => {
   return (
     <FadeInSection>
-    <section id="experience" className="section experience-section">
-      <h2 className="section-title">Experience</h2>
-      <div className="experience-list">
-        {experiences.map((exp, idx) => (
-          <div className="experience-item" key={idx}>
-            <h3>
-              {exp.title}
-              <span> @ {exp.company}</span>
-            </h3>
-            <span className="experience-meta">
-              {exp.dates} | {exp.location}
-            </span>
-            <ul>
-              {exp.description.map((desc, i) => (
-                <li key={i}>{desc}</li>
-              ))}
-            </ul>
-            <div className="experience-tags">
-              {exp.tags.map((tag, i) => (
-                <span className="tag" key={i}>
-                  {tag}
+      <section id="experience" className="section" aria-label="Professional Experience">
+        <h2 className="section-title">Experience</h2>
+
+        <div className="experience-list">
+          {experiences.map((exp) => (
+            <div key={exp.id} className="experience-item">
+              <div className="experience-year" aria-label={`Dates: ${exp.dates}`}>
+                {exp.dates}
+              </div>
+              <h3 className="experience-title">
+                {exp.title}{" "}
+                <span className="experience-company" aria-label={`Company: ${exp.company}`}>
+                  @ {exp.company}
                 </span>
-              ))}
+              </h3>
+              <div className="experience-location" aria-label={`Location: ${exp.location}`}>
+                {exp.location}
+              </div>
+
+              <div className="experience-details">
+                {exp.description?.map((desc, idx) => (
+                  <p key={idx}>{desc}</p>
+                ))}
+              </div>
+
+              <div className="experience-tags">
+                {exp.tags?.map((tag, idx) => (
+                  <span key={idx} className="tag">{tag}</span>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
     </FadeInSection>
   );
-}
+};
+
+export default Experience;

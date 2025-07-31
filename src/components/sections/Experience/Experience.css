@@ -15,7 +15,7 @@
 }
 
 .experience-list {
-  max-width: 700px;
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -38,7 +38,7 @@
 .experience-item h3 {
   font-size: 1.18rem;
   font-weight: 600;
-  color: #22223b;
+  color: #d6d6f6;
   margin: 0;
 }
 
