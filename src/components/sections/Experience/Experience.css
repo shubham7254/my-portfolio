@@ -1,0 +1,101 @@
+/* Experience.css */
+
+.section.experience-section {
+  padding: 50px 0 40px 0;
+  background: transparent; /* Or use your brand background color */
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+  color: #3b82f6; /* Use your theme's accent color */
+  text-align: center;
+}
+
+.experience-list {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.experience-item {
+  background: rgba(44, 62, 80, 0.11);
+  border-left: 4px solid #3b82f6;
+  border-radius: 10px;
+  padding: 1.5rem 1.8rem;
+  box-shadow: 0 2px 18px rgba(59, 130, 246, 0.045);
+  transition: box-shadow 0.2s;
+}
+
+.experience-item:hover {
+  box-shadow: 0 4px 24px rgba(59, 130, 246, 0.17);
+}
+
+.experience-item h3 {
+  font-size: 1.18rem;
+  font-weight: 600;
+  color: #22223b;
+  margin: 0;
+}
+
+.experience-item h3 span {
+  color: #6366f1;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.experience-meta {
+  display: block;
+  font-size: 0.98rem;
+  font-weight: 400;
+  color: #64748b;
+  margin: 0.25rem 0 0.8rem;
+}
+
+.experience-item ul {
+  margin: 0 0 0.6rem 1.35rem;
+  padding: 0;
+  color: #34495e;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.experience-tags {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.experience-tags .tag {
+  background: #e0f2fe;
+  color: #307bcf;
+  padding: 0.26rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, color 0.2s;
+}
+
+.experience-tags .tag:hover {
+  background: #3b82f6;
+  color: #fff;
+}
+
+@media (max-width: 750px) {
+  .experience-list {
+    max-width: 98%;
+    gap: 1.5rem;
+  }
+  .experience-item {
+    padding: 1.1rem 1.1rem;
+  }
+  .section-title {
+    font-size: 1.6rem;
+  }
+}

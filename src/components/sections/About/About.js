@@ -4,7 +4,7 @@ import './About.css';
 
 const About = () => {
   const stats = [
-    { number: "15+", label: "AI/ML Projects" },
+    { number: "7+", label: "AI/ML Projects" },
     { number: "3", label: "Years Learning" },
     { number: "5+", label: "Technologies" }
   ];

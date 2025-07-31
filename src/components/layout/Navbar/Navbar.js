@@ -14,6 +14,7 @@ const Navbar = () => {
     { href: "#skills", label: "Skills", icon: "fas fa-code" },
     { href: "#projects", label: "Projects", icon: "fas fa-project-diagram" },
     { href: "#education", label: "Education", icon: "fas fa-graduation-cap" },
+    { href: "#experience", label: "Experience", icon: "fas fa-briefcase" },
     { href: "#contact", label: "Contact", icon: "fas fa-envelope" }
   ];
 

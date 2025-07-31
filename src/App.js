@@ -7,13 +7,17 @@ import Navbar from './components/layout/Navbar/Navbar';
 import Hero from './components/sections/Hero/Hero';
 import Footer from './components/layout/Footer/Footer';
 import ChatWidget from './components/common/ChatWidget/ChatWidget'; // Add this
+import InteractiveNeuralNet from './components/common/InteractiveNeuralNet/InteractiveNeuralNet'; // Add this
+import Experience from './components/sections/Experience/Experience'; // Import Experience section
 
 // Lazy load components for better performance
 const About = React.lazy(() => import('./components/sections/About/About'));
 const Skills = React.lazy(() => import('./components/sections/Skills/Skills'));
 const Projects = React.lazy(() => import('./components/sections/Projects/Projects'));
 const Education = React.lazy(() => import('./components/sections/Education/Education'));
+const Experience = React.lazy(() => import('./components/sections/Experience/Experience')); // Lazy load Experience section
 const Contact = React.lazy(() => import('./components/sections/Contact/Contact'));
+
 
 function App() {
   return (
@@ -33,12 +37,14 @@ function App() {
 
           <Navbar />
           <main id="main-content">
+            <InteractiveNeuralNet />
             <Hero />
             <Suspense fallback={<LoadingSpinner />}>
               <About />
               <Skills />
               <Projects />
               <Education />
+              <Experience />
               <Contact />
             </Suspense>
           </main>
