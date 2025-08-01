@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.REACT_APP_RAG_API_URL || 'http://localhost:8000';
+const API_BASE_URL = process.env.REACT_APP_RAG_API_URL || 'portfolio-rag-production.up.railway.app';
 
 class RagApiService {
   async chat(question) {
