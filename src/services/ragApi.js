@@ -1,4 +1,4 @@
-const API_BASE_URL = 'portfolio-rag-production.up.railway.app';
+const API_BASE_URL = 'https://portfolio-rag-production.up.railway.app';
 
 class RagApiService {
   async chat(question, maxSources = 3) {
