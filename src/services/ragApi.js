@@ -1,14 +1,17 @@
-const API_BASE_URL = process.env.REACT_APP_RAG_API_URL || 'portfolio-rag-production.up.railway.app';
+const API_BASE_URL = 'portfolio-rag-production.up.railway.app';
 
 class RagApiService {
-  async chat(question) {
+  async chat(question, maxSources = 3) {
     try {
       const response = await fetch(`${API_BASE_URL}/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ question }),
+        body: JSON.stringify({ 
+          question,
+          max_sources: maxSources 
+        }),
       });
 
       if (!response.ok) {
@@ -45,6 +48,20 @@ class RagApiService {
       return await response.json();
     } catch (error) {
       console.error('Sample questions API error:', error);
+      throw error;
+    }
+  }
+
+  // Health check endpoint
+  async healthCheck() {
+    try {
+      const response = await fetch(`${API_BASE_URL}/`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('Health check error:', error);
       throw error;
     }
   }
