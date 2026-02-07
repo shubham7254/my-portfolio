@@ -3,22 +3,22 @@ import { useAppContext } from '../../../context/AppContext';
 import { useScrollDirection } from '../../../hooks/useScrollDirection';
 import './Navbar.css';
 
+const navItems = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Projects" },
+  { href: "#education", label: "Education" },
+  { href: "#experience", label: "Experience" },
+  { href: "#contact", label: "Contact" }
+];
+
 const Navbar = () => {
   const { state, dispatch } = useAppContext();
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSection, setActiveSection] = useState('home');
   const scrollDirection = useScrollDirection();
-
-  const navItems = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#skills", label: "Skills" },
-    { href: "#projects", label: "Projects" },
-    { href: "#education", label: "Education" },
-    { href: "#experience", label: "Experience" },
-    { href: "#contact", label: "Contact" }
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
