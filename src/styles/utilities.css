@@ -1,8 +1,8 @@
 /* Container */
 .container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 var(--space-4);
+  padding: 0 var(--space-6);
 }
 
 /* Layout */
@@ -51,7 +51,7 @@
 
 /* Typography Utilities */
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(135deg, var(--text-primary), var(--text-muted));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -80,27 +80,36 @@
 
 /* Section Base */
 .section {
-  padding: clamp(3rem, 10vh, 6rem) clamp(1rem, 4vw, 2rem);
-  max-width: 1200px;
+  padding: clamp(4rem, 12vh, 8rem) clamp(1.5rem, 5vw, 3rem);
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .section-title {
-  font-size: clamp(1.5rem, 6vw, 2.5rem);
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
   font-weight: var(--font-weight-bold);
-  text-align: center;
+  text-align: left;
+  margin-bottom: var(--space-2);
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background: none;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: var(--font-size-lg);
   margin-bottom: var(--space-12);
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  max-width: 500px;
 }
 
 /* Button Utilities */
 .btn {
-  padding: var(--space-4) var(--space-8);
+  padding: var(--space-3) var(--space-6);
   border: none;
   border-radius: var(--radius-md);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
   text-decoration: none;
   transition: all var(--transition-normal);
   cursor: pointer;
@@ -110,49 +119,51 @@
   min-height: 44px;
   min-width: 44px;
   justify-content: center;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.01em;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  color: var(--text-primary);
+  background: var(--text-primary);
+  color: var(--bg-primary);
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-glow);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+  opacity: 0.9;
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
 }
 
 .btn-secondary:hover {
-  background: var(--color-primary);
-  color: var(--text-primary);
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
 }
 
 /* Card Utilities */
 .card {
   background: var(--bg-card);
-  border-radius: var(--radius-xl);
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
   transition: all var(--transition-normal);
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(59, 130, 246, 0.5);
-  box-shadow: var(--shadow-xl);
+  border-color: var(--border-default);
+  box-shadow: var(--shadow-glow);
 }
 
 /* Animation Utilities */
 .fade-in {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
+  transform: translateY(20px);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fade-in.visible {

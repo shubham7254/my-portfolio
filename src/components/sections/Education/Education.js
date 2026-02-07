@@ -7,7 +7,8 @@ const Education = () => {
   return (
     <FadeInSection>
       <section id="education" className="section">
-        <h2 className="section-title">Education & Learning</h2>
+        <h2 className="section-title">Education</h2>
+        <p className="section-subtitle">Academic background and coursework</p>
         
         <div className="education-timeline">
           {educationData.map((item) => (
