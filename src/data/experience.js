@@ -1,5 +1,31 @@
 const experiences = [
   {
+    id: "gra-alzheimers",
+    title: "Graduate Research Assistant",
+    company: "University of Michigan-Dearborn College of Engineering and Computer Science",
+    dates: "Aug 2025 – Present",
+    location: "Dearborn, MI · Hybrid",
+    description: [
+      "Contributed to an NIH-funded research project focused on AI-driven disease prognosis and driving-behavior analysis for early Alzheimer's detection.",
+      "Developed and managed end-to-end data pipelines for multimodal sensor and wearable data in machine-learning research.",
+      "Oversaw device installation, calibration, and data acquisition, ensuring accurate data recording for research integrity.",
+    ],
+    tags: ["AI", "Machine Learning", "Data Pipelines", "Sensor Data", "Healthcare", "NIH Research"],
+  },
+  {
+    id: "gra-cybersecurity-ev",
+    title: "Graduate Research Assistant",
+    company: "University of Michigan-Dearborn",
+    dates: "Jul 2025 – Oct 2025",
+    location: "Dearborn, MI · On-site",
+    description: [
+      "Researched cybersecurity of electric vehicle charging stations, analyzing power-consumption datasets to understand cyberattack manifestations in load patterns.",
+      "Investigated anomalies linked to threats such as cryptojacking, backdoors, and denial-of-service attacks.",
+      "Developed baseline machine learning models to detect malicious behaviors in EV charging infrastructure.",
+    ],
+    tags: ["Cybersecurity", "Machine Learning", "EV Infrastructure", "Anomaly Detection", "Data Analysis"],
+  },
+  {
     id: "campus-store-bn",
     title: "Campus Store Team Member (Part-Time)",
     company: "Barnes & Noble Education, Inc.",
