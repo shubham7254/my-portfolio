@@ -3,24 +3,45 @@ import { useAppContext } from '../../../context/AppContext';
 import { useScrollDirection } from '../../../hooks/useScrollDirection';
 import './Navbar.css';
 
+const navItems = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Projects" },
+  { href: "#education", label: "Education" },
+  { href: "#experience", label: "Experience" },
+  { href: "#contact", label: "Contact" }
+];
+
 const Navbar = () => {
   const { state, dispatch } = useAppContext();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [activeSection, setActiveSection] = useState('home');
   const scrollDirection = useScrollDirection();
-
-  const navItems = [
-    { href: "#home", label: "Home", icon: "fas fa-home" },
-    { href: "#about", label: "About", icon: "fas fa-user" },
-    { href: "#skills", label: "Skills", icon: "fas fa-code" },
-    { href: "#projects", label: "Projects", icon: "fas fa-project-diagram" },
-    { href: "#education", label: "Education", icon: "fas fa-graduation-cap" },
-    { href: "#experience", label: "Experience", icon: "fas fa-briefcase" },
-    { href: "#contact", label: "Contact", icon: "fas fa-envelope" }
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
+      setIsScrolled(window.scrollY > 50);
+      
+      // Calculate scroll progress
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      setScrollProgress(progress);
+
+      // Determine active section
+      const sections = navItems.map(item => item.href.replace('#', ''));
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 120) {
+            setActiveSection(sections[i]);
+            break;
+          }
+        }
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -44,7 +65,10 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''} ${scrollDirection === 'down' ? 'navbar-hidden' : ''}`}>
+    <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''} ${scrollDirection === 'down' && isScrolled ? 'navbar-hidden' : ''}`}>
+      {/* Scroll Progress Bar */}
+      <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} />
+      
       <div className="nav-container">
         <div className="logo">
           <a 
@@ -52,7 +76,7 @@ const Navbar = () => {
             onClick={(e) => handleNavClick(e, '#home')}
             className="logo-link"
           >
-            Shubham Jagtap
+            SJ
           </a>
         </div>
         
@@ -73,10 +97,9 @@ const Navbar = () => {
               <a 
                 href={item.href} 
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="nav-link"
+                className={`nav-link ${activeSection === item.href.replace('#', '') ? 'nav-link-active' : ''}`}
                 aria-label={`Navigate to ${item.label} section`}
               >
-                <i className={`${item.icon} nav-icon`}></i>
                 <span className="nav-text">{item.label}</span>
               </a>
             </li>

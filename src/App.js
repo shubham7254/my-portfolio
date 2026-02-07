@@ -6,7 +6,7 @@ import LoadingSpinner from './components/common/LoadingSpinner/LoadingSpinner';
 import Navbar from './components/layout/Navbar/Navbar';
 import Hero from './components/sections/Hero/Hero';
 import Footer from './components/layout/Footer/Footer';
-import ChatWidget from './components/common/ChatWidget/ChatWidget'; // Add this
+import ChatWidget from './components/common/ChatWidget/ChatWidget';
 
 // Lazy load components for better performance
 const About = React.lazy(() => import('./components/sections/About/About'));
@@ -22,16 +22,8 @@ function App() {
     <AppProvider>
       <ErrorBoundary>
         <div className="App">
-          {/* Animated Background */}
-          <div className="animated-bg">
-            <div className="floating-particles">
-              <div className="particle"></div>
-              <div className="particle"></div>
-              <div className="particle"></div>
-              <div className="particle"></div>
-              <div className="particle"></div>
-            </div>
-          </div>
+          {/* Subtle grid background */}
+          <div className="animated-bg"></div>
 
           <Navbar />
           <main id="main-content">
@@ -46,7 +38,7 @@ function App() {
             </Suspense>
           </main>
           <Footer />
-           <ChatWidget />
+          <ChatWidget />
         </div>
       </ErrorBoundary>
     </AppProvider>

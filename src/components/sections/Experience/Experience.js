@@ -8,20 +8,21 @@ const Experience = () => {
     <FadeInSection>
       <section id="experience" className="section" aria-label="Professional Experience">
         <h2 className="section-title">Experience</h2>
+        <p className="section-subtitle">Professional and research background</p>
 
         <div className="experience-list">
           {experiences.map((exp) => (
             <div key={exp.id} className="experience-item">
-              <div className="experience-year" aria-label={`Dates: ${exp.dates}`}>
+              <div className="experience-year">
                 {exp.dates}
               </div>
               <h3 className="experience-title">
                 {exp.title}{" "}
-                <span className="experience-company" aria-label={`Company: ${exp.company}`}>
+                <span className="experience-company">
                   @ {exp.company}
                 </span>
               </h3>
-              <div className="experience-location" aria-label={`Location: ${exp.location}`}>
+              <div className="experience-location">
                 {exp.location}
               </div>
 

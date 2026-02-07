@@ -12,7 +12,9 @@ const About = () => {
   return (
     <FadeInSection>
       <section id="about" className="section">
-        <h2 className="section-title">About Me</h2>
+        <h2 className="section-title">About</h2>
+        <p className="section-subtitle">A bit about my journey in AI</p>
+        
         <div className="about-content">
           <div className="about-image-container">
             <img 
@@ -22,19 +24,16 @@ const About = () => {
             />
           </div>
           <div className="about-text">
-            <h3>My Journey in AI</h3>
             <p>
               I'm a dedicated AI Engineering student with a passion for solving real-world problems through 
               intelligent systems. My journey began with curiosity about how machines can learn and has evolved 
               into expertise in healthcare AI, natural language processing, and computer vision.
             </p>
-            <br />
             <p>
               Currently pursuing my degree while actively building projects that demonstrate practical 
               applications of AI in healthcare, legal tech, and autonomous systems. I believe in continuous 
               learning and staying current with the latest developments in AI/ML.
             </p>
-            <br />
             <p>
               <strong>What drives me:</strong> Creating AI solutions that have meaningful impact on people's lives, 
               particularly in healthcare where technology can truly make a difference.
