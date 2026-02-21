@@ -52,6 +52,21 @@ const experiences = [
     ],
   },
   {
+    id: "ml-engineer-entel",
+    title: "Machine Learning Engineer",
+    company: "EN-TEL Network Systems Pvt. Ltd.",
+    dates: "Apr 2023 – Jul 2024",
+    location: "India",
+    description: [
+      "Shipped customer-facing video analytics for data center surveillance in production deployments, supporting intrusion detection, restricted zone entry, and smoke/fire alerts.",
+      "Owned feature-level model delivery in Python and PyTorch, including data preparation, training runs, evaluation reports, and fixes driven by error analysis for low light, motion blur, and occlusions.",
+      "Met production constraints by optimizing inference with FP16 mixed precision, INT8 quantization, and profiling to hit latency, throughput, and memory targets on edge/on-prem GPU systems.",
+    ],
+    tags: [
+      "Computer Vision", "PyTorch", "Video Analytics", "Model Optimization", "Edge Deployment", "Python", "Quantization"
+    ],
+  },
+  {
     id: "android-developer-exposys",
     title: "Android Developer Intern",
     company: "Exposys Data Labs",
