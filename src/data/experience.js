@@ -3,7 +3,7 @@ const experiences = [
     id: "gra-alzheimers",
     title: "Graduate Research Assistant",
     company: "University of Michigan-Dearborn College of Engineering and Computer Science",
-    dates: "Aug 2025 – Present",
+    dates: "Sep 2025 – Present",
     location: "Dearborn, MI · Hybrid",
     description: [
       "Contributed to an NIH-funded research project focused on AI-driven disease prognosis and driving-behavior analysis for early Alzheimer's detection.",
@@ -16,7 +16,7 @@ const experiences = [
     id: "gra-cybersecurity-ev",
     title: "Graduate Research Assistant",
     company: "University of Michigan-Dearborn",
-    dates: "Jul 2025 – Oct 2025",
+    dates: "Jul 2025 – Sep 2025",
     location: "Dearborn, MI · On-site",
     description: [
       "Researched cybersecurity of electric vehicle charging stations, analyzing power-consumption datasets to understand cyberattack manifestations in load patterns.",
@@ -38,24 +38,10 @@ const experiences = [
     tags: ["Problem Solving", "Retail Systems", "Customer Engagement", "Inventory Control"],
   },
   {
-    id: "research-paper-legalai",
-    title: "Research Paper Co-Author",
-    company: "IEEE Xplore",
-    dates: "Published: Jun 2023",
-    location: "Savitribai Phule Pune University, India",
-    description: [
-      "Co-authored IEEE paper on legal document summarization using LegalBERT & DistilBART.",
-      "Handled model development, dataset curation, and evaluation.",
-    ],
-    tags: [
-      "Deep Learning", "NLP", "Transformers", "Legal AI", "Text Summarization", "IEEE"
-    ],
-  },
-  {
     id: "ml-engineer-entel",
     title: "Machine Learning Engineer",
     company: "EN-TEL Network Systems Pvt. Ltd.",
-    dates: "Apr 2023 – Jul 2024",
+    dates: "May 2023 – Jul 2024",
     location: "India",
     description: [
       "Shipped customer-facing video analytics for data center surveillance in production deployments, supporting intrusion detection, restricted zone entry, and smoke/fire alerts.",

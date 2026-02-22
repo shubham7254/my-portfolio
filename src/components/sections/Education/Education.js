@@ -1,6 +1,6 @@
 import React from 'react';
 import FadeInSection from '../../common/FadeInSection/FadeInSection';
-import { educationData } from '../../../data/education';
+import { educationData, publicationsData } from '../../../data/education';
 import './Education.css';
 
 const Education = () => {
@@ -28,6 +28,26 @@ const Education = () => {
                       detail
                     )}
                   </p>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <h3 className="publications-heading">Publications</h3>
+        <div className="publications-list">
+          {publicationsData.map((pub) => (
+            <div key={pub.id} className="publication-item">
+              <div className="publication-date">{pub.date}</div>
+              <h4 className="publication-title">{pub.title}</h4>
+              <div className="publication-venue">{pub.venue}</div>
+              <div className="publication-details">
+                {pub.description.map((desc, idx) => (
+                  <p key={idx}>{desc}</p>
+                ))}
+              </div>
+              <div className="publication-tags">
+                {pub.tags.map((tag, idx) => (
+                  <span key={idx} className="tag">{tag}</span>
                 ))}
               </div>
             </div>

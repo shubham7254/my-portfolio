@@ -1,3 +1,18 @@
+export const publicationsData = [
+  {
+    id: 1,
+    title: "Legal Document Summarization Using LegalBERT & DistilBART",
+    venue: "IEEE Xplore",
+    date: "Published: Jun 2023",
+    authors: "Co-authored",
+    description: [
+      "Co-authored IEEE paper on legal document summarization using LegalBERT & DistilBART.",
+      "Handled model development, dataset curation, and evaluation.",
+    ],
+    tags: ["Deep Learning", "NLP", "Transformers", "Legal AI", "Text Summarization", "IEEE"],
+  },
+];
+
 export const educationData = [
   {
     id: 1,
