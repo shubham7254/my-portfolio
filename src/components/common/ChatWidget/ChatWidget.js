@@ -34,7 +34,7 @@ const ChatWidget = () => {
   const loadSampleQuestions = async () => {
     try {
       const questions = await ragApiService.getSampleQuestions();
-      setSampleQuestions(questions.slice(0, 3)); // Show only first 3
+      setSampleQuestions(questions.sample_questionsslice(0, 3)); // Show only first 3
     } catch (error) {
       console.error('Failed to load sample questions:', error);
     }
@@ -140,7 +140,7 @@ const ChatWidget = () => {
                   {typeof message.content === 'string' ? message.content : JSON.stringify(message.content)}
                   {message.sources && message.sources.length > 0 && (
                     <div className="message-sources">
-                      <small>Sources: {message.sources.join(', ')}</small>
+                      <small>Sources: {message.sources.map(s => s.source).join(', ')}</small>
                     </div>
                   )}
                 </div>
